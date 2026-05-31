@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+ <modelVersion>4.0.0</modelVersion>
+  <groupId>com.nativelibs4java</groupId>
+  <artifactId>jni</artifactId>
+  <name>JNI BridJ Bindings</name>
+  <url>http://code.google.com/p/bridj</url>
+  <version>0.7</version>
+  <packaging>jar</packaging>
+
+  <!--
+  Local site:
+  mvn clean site site:deploy -Dsite.url=file://`pwd`/target/site-deployed
+  -->
+  
+  <parent>
+	  <groupId>com.nativelibs4java</groupId>
+	  <artifactId>nativelibs4java-parent</artifactId>
+	  <version>1.9</version>
+	  <relativePath>../..</relativePath>
+  </parent>
+
+  <dependencies>
+
+    <dependency>
+          <groupId>com.nativelibs4java</groupId>
+          <artifactId>bridj</artifactId>
+          <version>${bridj.version}</version>
+	</dependency>  
+	
+  </dependencies>
+
+  <build>
+  	<plugins>
+  		
+		<plugin>
+			<groupId>com.nativelibs4java</groupId>
+			<artifactId>maven-jnaerator-plugin</artifactId>
+		</plugin>
+		
+  		<plugin>
+			<groupId>com.nativelibs4java</groupId>
+			<artifactId>maven-velocity-plugin</artifactId>
+		</plugin>
+		
+  	</plugins>
+  </build>
+</project>
+
+
+
+
